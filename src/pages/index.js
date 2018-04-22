@@ -5,41 +5,49 @@ import Link from 'gatsby-link'
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { edges: pages } = data.allMarkdownRemark
+    const home = pages.filter(page => page.node.frontmatter.templateKey === 'home-page')[0].node.frontmatter;
+    console.log(home);
 
     return (
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          {posts
-            .filter(post => post.node.frontmatter.templateKey === 'blog-post')
-            .map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
+      <div>
+        <header className="masthead text-center text-white d-flex">
+          <div className="container my-auto">
+            <div className="row">
+              <div className="col-lg-10 mx-auto">
+                <h1 className="text-uppercase">
+                  <strong>{home.heading}</strong>
+                </h1>
+                <hr />
               </div>
-            ))}
-        </div>
-      </section>
+              <div className="col-lg-8 mx-auto">
+                <p className="text-faded mb-5">{home.description}</p>
+                <a className="btn btn-primary btn-xl js-scroll-trigger" href="#expertise">Find Out More</a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section className="section" id="expertise">
+          <div className="container">
+            <div className="content">
+              <h1 className="has-text-weight-bold is-size-2">{home.expertise.heading}</h1>
+            </div>
+            {home.expertise.items.map((expertise) => (
+                <div
+                  className="content"
+                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+                  key={expertise.id}
+                >
+                  <h2 className="has-text-primary" >
+                    {expertise.title}
+                  </h2>
+                  <p dangerouslySetInnerHTML={{__html: expertise.description}}>
+                  </p>
+                </div>
+              ))}
+          </div>
+        </section>
+      </div>
     )
   }
 }
@@ -57,15 +65,20 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 400)
           id
-          fields {
-            slug
-          }
           frontmatter {
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            heading
+            description
+            expertise {
+              heading
+              items {
+                title
+                description
+              }
+            }
           }
         }
       }

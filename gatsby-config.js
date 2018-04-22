@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'R2BK',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -33,5 +33,14 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Merriweather\:400,300,300italic,400italic,700,700italic,900,900italic`,
+          `Open+Sans\:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800`
+        ]
+      }
+    }
   ],
 }

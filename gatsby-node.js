@@ -28,9 +28,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const pages = result.data.allMarkdownRemark.edges
 
-    posts.forEach(edge => {
+    pages.forEach(edge => {
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
@@ -47,8 +47,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     // Tag pages:
     let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
+    // Iterate through each page, putting all found tags into `tags`
+    pages.forEach(edge => {
       if (_.get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }

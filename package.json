@@ -4,9 +4,11 @@
   "version": "1.1.1",
   "author": "Austin Green",
   "dependencies": {
-    "bulma": "^0.6.0",
+    "bootstrap": "4.0.0",
+    "font-awesome": "4.7.0",
     "gatsby": "^1.9.213",
     "gatsby-link": "^1.6.37",
+    "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-netlify-cms": "^1.0.9",
     "gatsby-plugin-react-helmet": "^2.0.5",
     "gatsby-plugin-sass": "^1.0.17",
@@ -15,11 +17,25 @@
     "gatsby-source-filesystem": "^1.5.23",
     "gatsby-transformer-remark": "^1.7.33",
     "gatsby-transformer-sharp": "^1.6.21",
+    "jquery": "3.3.1",
+    "jquery.easing": "^1.4.1",
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
+    "magnific-popup": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "scrollreveal": "3.3.6"
+  },
+  "devDependencies": {
+    "browser-sync": "2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "3.9.2",
+    "gulp-header": "2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "3.0.0",
+    "prettier": "^1.7.4"
   },
   "keywords": [
     "gatsby"
@@ -29,12 +45,10 @@
   "scripts": {
     "start": "npm run develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "npm run dev",
+    "dev": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "prettier": "^1.7.4"
   }
 }
