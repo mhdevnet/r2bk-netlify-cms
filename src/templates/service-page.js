@@ -41,13 +41,13 @@ export const ServicePageTemplate = ({
                   <p>{description}</p>
                 </div>
               </div>
-              <Services gridItems={services.items} />
+                {/* <Services gridItems={services.items} /> */}
               <div className="columns">
                 <div className="column is-7">
                   <h3 className="has-text-weight-semibold is-size-3">
-                    {main.heading}
+                    { /*{main.heading}*/}
                   </h3>
-                  <p>{main.description}</p>
+                  <p>{/*{main.description}*/}</p>
                 </div>
               </div>
             </div>
