@@ -4,6 +4,11 @@ path: /
 title: RR2BK | Home
 heading: R2BK is a premier technology solutions organization and content creator.
 description: R2BK partners with clients to deliver consulting solutions surrounding Technology, Process, Production, Media, and Change initiatives where Digital Consultants shares in the risk and responsibility for delivery of high-quality solutions.
+contact:
+  heading: Contact Us
+  email: info@r2bk.com
+  phone: (212) 555-5000
+  description: Contact/footer description
 expertise:
   heading: Our Expertise
   items:

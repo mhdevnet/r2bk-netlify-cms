@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Content, { HTMLContent } from '../components/Content'
 
-export const HomePageTemplate = ({ title, content, contentComponent }) => {
+export const ContactPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -23,55 +23,36 @@ export const HomePageTemplate = ({ title, content, contentComponent }) => {
   )
 }
 
-HomePageTemplate.propTypes = {
+ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
-const HomePage = ({ data }) => {
-  const { markdownRemark: page } = data
+const ContactPage = ({ data }) => {
+  const { markdownRemark: post } = data
 
   return (
-    <HomePageTemplate
+    <ContactPageTemplate
       contentComponent={HTMLContent}
-      title={page.frontmatter.title}
-      heading={page.frontmatter.heading}
-      description={page.frontmatter.description}
-      content={page.html}
-      expertise={page.frontmatter.expertise}
-      contact={page.frontmatter.contact}
+      title={post.frontmatter.title}
+      content={post.html}
     />
   )
 }
 
-HomePage.propTypes = {
+ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default HomePage
+export default ContactPage
 
-export const homePageQuery = graphql`
-  query HomePage($id: String!) {
+export const aboutPageQuery = graphql`
+  query ContactPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
-        heading
-        description
-        contact {
-          email
-          heading
-          phone
-          description
-        }
-        expertise {
-          heading
-          items {
-            title
-            description
-          }
-        }
       }
     }
   }

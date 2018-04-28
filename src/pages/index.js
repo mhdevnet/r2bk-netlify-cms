@@ -2,12 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-export default class IndexPage extends React.Component {
+class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const { edges: pages } = data.allMarkdownRemark
-    const home = pages.filter(page => page.node.frontmatter.templateKey === 'home-page')[0].node.frontmatter;
-    console.log(home);
+    const home = data.allMarkdownRemark.edges[0].node.frontmatter;
 
     return (
       <div>
@@ -60,9 +58,20 @@ IndexPage.propTypes = {
   }),
 }
 
+export default IndexPage
+
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] },
+      filter: {
+        frontmatter: {
+          templateKey: {
+            eq: "home-page"
+          }
+        }
+      }
+    ) {
       edges {
         node {
           id
