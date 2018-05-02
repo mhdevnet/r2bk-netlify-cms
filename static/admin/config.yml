@@ -28,22 +28,19 @@ collections:
     label: "Pages"
     files:
       - file: "src/pages/home/index.md"
-        label: "home"
+        label: "Homepage"
         name: "home"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-          - {
-              label: Expertise,
-              name: expertise,
-              widget: list,
-              fields: [
-                {label: Title, name: title, widget: string},
-                {label: Description, name: description, widget: text},
-                {label: Image, name: image, widget: image}
-              ]
-            }
+          - label: Expertise,
+            name: expertise,
+            widget: list,
+            fields:
+                - {label: Title, name: title, widget: string}
+                - {label: Description, name: description, widget: text}
+                - {label: Image, name: image, widget: image}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -62,20 +59,17 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
-          - {
-              label: Services,
-              name: services,
-              widget: object,
-              fields: [
-                {
+          - label: Services
+            name: services
+            widget: object
+            fields:
+                - {
                   label: Items,
                   name: items,
                   widget: list,
-                  fields: [,
+                  fields: 
                     {label: Title, name: title, widget: string},
                     {label: Icon, name: icon, widget: string},
                     {label: Text, name: text, widget: text}
-                  ]
                 }
-              ]
             }
