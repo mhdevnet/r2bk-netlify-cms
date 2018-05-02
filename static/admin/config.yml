@@ -34,9 +34,9 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-          - label: Expertise,
-            name: expertise,
-            widget: list,
+          - label: Expertise
+            name: expertise
+            widget: list
             fields:
                 - {label: Title, name: title, widget: string}
                 - {label: Description, name: description, widget: text}
