@@ -72,4 +72,3 @@ collections:
                     {label: Icon, name: icon, widget: string},
                     {label: Text, name: text, widget: text}
                 }
-            }
