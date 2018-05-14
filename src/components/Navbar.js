@@ -32,6 +32,11 @@ class Navbar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
+                <Link className="nav-link js-scrol-trigger" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link js-scrol-trigger" to="/about">
                   About
                 </Link>

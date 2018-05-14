@@ -4,12 +4,14 @@ path: /services
 title: Our Services
 image: /img/jumbotron.jpg
 heading: What we offer
-description: >-
+description: >
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee serviceion,
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
 services:
+  title: R2BK Services
+  description: Description
   items:
     - title: Title 1
       icon: /img/coffee.png

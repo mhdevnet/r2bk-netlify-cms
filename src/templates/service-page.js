@@ -3,13 +3,30 @@ import PropTypes from 'prop-types'
 import Services from '../components/Services'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
+import ScrollReveal from 'scrollreveal';
+
+// Scroll reveal calls
+sr.reveal('.sr-icons', {
+  duration: 600,
+  scale: 0.3,
+  distance: '0px'
+}, 200);
+sr.reveal('.sr-button', {
+  duration: 1000,
+  delay: 200
+});
+sr.reveal('.sr-contact', {
+  duration: 600,
+  scale: 0.3,
+  distance: '0px'
+}, 300);
 
 export const ServicePageTemplate = ({
   image,
   title,
   heading,
   description,
-  items
+  services
 }) => (
   <div>
     <header className="masthead text-center text-white d-flex"
@@ -23,22 +40,27 @@ export const ServicePageTemplate = ({
             <hr />
           </div>
           <div className="col-lg-8 mx-auto">
-            <p className="text-faded mb-5">{description}</p>
-            <a className="btn btn-primary btn-xl js-scroll-trigger" href="#expertise">Find Out More</a>
+            <p className="text-faded mb-5" dangerouslySetInnerHTML={{__html: description}}></p>
+            <a className="btn btn-primary btn-xl js-scroll-trigger" href="#services-description">Find Out More</a>
           </div>
         </div>
       </div>
     </header>
-    <section className="bg-dark" id="service">
+    <section className="bg-dark" id="services-description">
       <div className="container">
         <div className="row">
           <div className="col-lg-8 mx-auto text-center">
-            <h2 className="section-heading text-white">We've got what you need!</h2>
+            <h2 className="section-heading text-white">{services.title}</h2>
             <hr className="light my-4" />
-            <p className="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            <a className="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+            <p className="text-faded mb-4" dangerouslySetInnerHTML={{__html: services.description}}></p>
+            <a className="btn btn-light btn-xl js-scroll-trigger" href="#services">Learn More!</a>
           </div>
         </div>
+      </div>
+    </section>
+    <section id="services">
+      <div className="container">
+        <Services gridItems={services.items}/>
       </div>
     </section>
   </div>
@@ -50,7 +72,9 @@ ServicePageTemplate.propTypes = {
   heading: PropTypes.string,
   description: PropTypes.string,
   services: PropTypes.shape({
-    items: PropTypes.array,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    items: PropTypes.array
   })
 }
 
@@ -87,6 +111,8 @@ export const ServicePageQuery = graphql`
         heading
         description
         services {
+          title
+          description
           items {
             title
             icon

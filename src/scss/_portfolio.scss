@@ -1,59 +1,106 @@
 // Styling for the portfolio section
-.portfolio-box {
-  position: relative;
-  display: block;
-  max-width: 650px;
-  margin: 0 auto;
-  .portfolio-box-caption {
-    position: absolute;
-    bottom: 0;
-    display: block;
+#expertise {
+  min-height: 500px;
+}
+
+#expertise-items {
+  height: 500px;
+  .carousel {
     width: 100%;
-    height: 100%;
-    text-align: center;
-    opacity: 0;
-    color: $white;
-    background: fade-out($primary, .1);
-    @include transition-all;
-    .portfolio-box-caption-content {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      transform: translateY(-50%);
+    .carousel-inner, .carousel-item {
+      height: 500px;
+    }
+    .carousel-indicators,
+    .carousel-control-prev,
+    .carousel-control-next {
+      color: $primary;
+    }
+  }
+}
+.portfolio-box-container {
+  max-width: 100%;
+  transition: none;
+  .portfolio-box {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    height: 500px;
+    overflow: hidden;
+    max-width: 100%;
+    .portfolio-box-title {
+      height: 100%;
+      color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
       text-align: center;
-      .project-category,
-      .project-name {
-        padding: 0 15px;
-        @include sans-serif-font;
+      padding: 0 2rem;
+    }
+    .portfolio-box-caption {
+      transition: .3s;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      text-align: center;
+      color: $white;
+      background: fade-out($primary, .1);
+      transform: translateY(150%);
+      @include transition-all;
+      .portfolio-box-caption-content {
+        top: 50%;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        .project-category,
+        .project-name {
+          padding: 0 15px;
+          @include sans-serif-font;
+        }
+        .project-category {
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+        .project-name {
+          font-size: 2rem;
+        }
+        .project-description {
+          font-size: 1.25rem;
+          line-height: 2.25rem;
+          padding: 0 3rem;
+          transition: .3s;
+          bottom: -150%;
+        }
       }
-      .project-category {
-        font-size: 14px;
-        font-weight: 600;
-        text-transform: uppercase;
+    }
+    &:hover {
+      .portfolio-box-caption {
+        display: block;
+        transform: translateY(0%);
+        .project-description {
+          bottom: 0;
+        }
       }
-      .project-name {
-        font-size: 18px;
+    }
+    &:focus {
+      outline: none;
+    }
+    @media (min-width: 768px) {
+      .portfolio-box-caption {
+        .portfolio-box-caption-content {
+          .project-category {
+            font-size: 16px;
+          }
+          .project-name {
+            font-size: 2rem;
+          }
+        }
       }
     }
   }
   &:hover {
-    .portfolio-box-caption {
-      opacity: 1;
-    }
-  }
-  &:focus {
-    outline: none;
-  }
-  @media (min-width: 768px) {
-    .portfolio-box-caption {
-      .portfolio-box-caption-content {
-        .project-category {
-          font-size: 16px;
-        }
-        .project-name {
-          font-size: 22px;
-        }
-      }
-    }
+    transition: .5s;
   }
 }
