@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Content, { HTMLContent } from '../components/Content'
+import smoothScrollTo from '../components/smoothScrollTo';
+// import Zoom from 'react-reveal/Zoom';
 
-export const AboutPageTemplate = ({ title, image, heading, content, contentComponent }) => {
+export const AboutPageTemplate = ({ title, image, heading, description, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -17,10 +19,16 @@ export const AboutPageTemplate = ({ title, image, heading, content, contentCompo
               </h1>
               <hr />
             </div>
+            <div className="col-lg-8 mx-auto">
+              <p className="text-faded mb-5" dangerouslySetInnerHTML={{__html: description}}></p>
+              {/* <Zoom> */}
+                <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#about" onClick={(e) => smoothScrollTo(e)}>Learn More</a>
+              {/* </Zoom> */}
+            </div>
           </div>
         </div>
       </header>
-      <section className="section section--gradient">
+      <section className="section section--gradient" id="about">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -53,6 +61,7 @@ const AboutPage = ({ data }) => {
       title={post.frontmatter.title}
       image={post.frontmatter.image}
       heading={post.frontmatter.heading}
+      description={post.frontmatter.description}
       content={post.html}
     />
   )
@@ -72,6 +81,7 @@ export const aboutPageQuery = graphql`
         title
         image
         heading
+        description
       }
     }
   }

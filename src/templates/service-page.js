@@ -3,23 +3,8 @@ import PropTypes from 'prop-types'
 import Services from '../components/Services'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
-import ScrollReveal from 'scrollreveal';
-
-// Scroll reveal calls
-sr.reveal('.sr-icons', {
-  duration: 600,
-  scale: 0.3,
-  distance: '0px'
-}, 200);
-sr.reveal('.sr-button', {
-  duration: 1000,
-  delay: 200
-});
-sr.reveal('.sr-contact', {
-  duration: 600,
-  scale: 0.3,
-  distance: '0px'
-}, 300);
+import Zoom from 'react-reveal/Zoom';
+import smoothScrollTo from '../components/smoothScrollTo';
 
 export const ServicePageTemplate = ({
   image,
@@ -41,7 +26,9 @@ export const ServicePageTemplate = ({
           </div>
           <div className="col-lg-8 mx-auto">
             <p className="text-faded mb-5" dangerouslySetInnerHTML={{__html: description}}></p>
-            <a className="btn btn-primary btn-xl js-scroll-trigger" href="#services-description">Find Out More</a>
+            {/* <Zoom> */}
+              <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#services-description" onClick={(e) => smoothScrollTo(e)}>Find Out More</a>
+            {/* </Zoom> */}
           </div>
         </div>
       </div>
@@ -53,7 +40,9 @@ export const ServicePageTemplate = ({
             <h2 className="section-heading text-white">{services.title}</h2>
             <hr className="light my-4" />
             <p className="text-faded mb-4" dangerouslySetInnerHTML={{__html: services.description}}></p>
-            <a className="btn btn-light btn-xl js-scroll-trigger" href="#services">Learn More!</a>
+            {/* <Zoom> */}
+              <a className="btn btn-light btn-xl js-scroll-trigger" href="#services" onClick={(e) => smoothScrollTo(e)}>Learn More!</a>
+            {/* </Zoom> */}
           </div>
         </div>
       </div>

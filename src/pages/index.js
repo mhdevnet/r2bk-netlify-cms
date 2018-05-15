@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Expertise from '../components/Expertise'
+import smoothScrollTo from '../components/smoothScrollTo';
+// import Zoom from 'react-reveal/Zoom';
 
 class IndexPage extends React.Component {
   render() {
@@ -20,7 +22,9 @@ class IndexPage extends React.Component {
               </div>
               <div className="col-lg-8 mx-auto">
                 <p className="text-faded mb-5">{home.description}</p>
-                <a className="btn btn-primary btn-xl js-scroll-trigger" href="#expertise">Find Out More</a>
+                {/* <Zoom> */}
+                  <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#expertise" onClick={(e) => smoothScrollTo(e)}>Find Out More</a>
+                {/* </Zoom> */}
               </div>
             </div>
           </div>

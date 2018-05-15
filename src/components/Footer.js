@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import logo from '../img/logo.png'
+import Zoom from 'react-reveal/Zoom';
 
 class Footer extends React.Component {
   render() {
@@ -22,14 +23,18 @@ class Footer extends React.Component {
           </div>
           <div className="row">
             <div className="col-lg-4 ml-auto text-center">
-              <i className="fa fa-phone fa-3x mb-3 sr-contact"></i>
-              <p><a href={`tel:${global.phone}`}>{global.phone}</a></p>
+              {/* <Zoom> */}
+                <i className="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                <p><a href={`tel:${global.phone}`}>{global.phone}</a></p>
+              {/* </Zoom> */}
             </div>
             <div className="col-lg-4 mr-auto text-center">
-              <i className="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-              <p>
-                <a href={`mailto:${global.email}`}>{global.email}</a>
-              </p>
+              {/* <Zoom> */}
+                <i className="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                <p>
+                  <a href={`mailto:${global.email}`}>{global.email}</a>
+                </p>
+              {/* </Zoom> */}
             </div>
           </div>
         </div>
