@@ -15,7 +15,7 @@ export const ServicePageTemplate = ({
 }) => (
   <div>
     <header className="masthead text-center text-white d-flex"
-      style={{ backgroundImage: `url(${image})` }}>
+      style={{ background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url(${image})` }}>
       <div className="container my-auto">
         <div className="row">
           <div className="col-lg-10 mx-auto">
@@ -26,9 +26,11 @@ export const ServicePageTemplate = ({
           </div>
           <div className="col-lg-8 mx-auto">
             <p className="text-faded mb-5" dangerouslySetInnerHTML={{__html: description}}></p>
-            {/* <Zoom> */}
-              <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#services-description" onClick={(e) => smoothScrollTo(e)}>Find Out More</a>
-            {/* </Zoom> */}
+            <Zoom>
+              <div>
+                <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#services-description" onClick={(e) => smoothScrollTo(e)}>Find Out More</a>
+              </div>
+            </Zoom>
           </div>
         </div>
       </div>
@@ -40,9 +42,11 @@ export const ServicePageTemplate = ({
             <h2 className="section-heading text-white">{services.title}</h2>
             <hr className="light my-4" />
             <p className="text-faded mb-4" dangerouslySetInnerHTML={{__html: services.description}}></p>
-            {/* <Zoom> */}
-              <a className="btn btn-light btn-xl js-scroll-trigger" href="#services" onClick={(e) => smoothScrollTo(e)}>Learn More!</a>
-            {/* </Zoom> */}
+            <Zoom>
+              <div>
+                <a className="btn btn-light btn-xl js-scroll-trigger" href="#services" onClick={(e) => smoothScrollTo(e)}>Learn More!</a>
+              </div>
+            </Zoom>
           </div>
         </div>
       </div>

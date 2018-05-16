@@ -94,7 +94,7 @@ export const GlobalQuery = graphql`
   query GlobalQuery {
     allMarkdownRemark(
       filter: {
-        frontmatter: { templateKey: { eq: "home-page" } }
+        frontmatter: { templateKey: { eq: "contact-page" } }
       }
     ) {
       totalCount

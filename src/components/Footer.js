@@ -8,6 +8,7 @@ class Footer extends React.Component {
   render() {
     const { data } = this.props
     const global = data.contact;
+    const year = (new Date).getFullYear();
     console.log(data);
 
     return (
@@ -23,18 +24,31 @@ class Footer extends React.Component {
           </div>
           <div className="row">
             <div className="col-lg-4 ml-auto text-center">
-              {/* <Zoom> */}
-                <i className="fa fa-phone fa-3x mb-3 sr-contact"></i>
-                <p><a href={`tel:${global.phone}`}>{global.phone}</a></p>
-              {/* </Zoom> */}
+              <Zoom>
+                <div>
+                  <i className="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                  <p>
+                    <a href={`tel:${global.phone}`}>{global.phone}</a>
+                  </p>
+                </div>
+              </Zoom>
             </div>
             <div className="col-lg-4 mr-auto text-center">
-              {/* <Zoom> */}
-                <i className="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-                <p>
-                  <a href={`mailto:${global.email}`}>{global.email}</a>
-                </p>
-              {/* </Zoom> */}
+              <Zoom>
+                <div>
+                  <i className="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                  <p>
+                    <a href={`mailto:${global.email}`}>{global.email}</a>
+                  </p>
+                </div>
+              </Zoom>
+            </div>
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-12 text-center bg-dark text-faded">
+              <h6><small>&copy; {year} R2BK Inc. Developed and Maintained by <a href="https://www.nitm.co">NITM Inc</a></small></h6>
             </div>
           </div>
         </div>

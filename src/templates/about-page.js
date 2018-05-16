@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Content, { HTMLContent } from '../components/Content'
 import smoothScrollTo from '../components/smoothScrollTo';
-// import Zoom from 'react-reveal/Zoom';
+import Zoom from 'react-reveal/Zoom';
 
 export const AboutPageTemplate = ({ title, image, heading, description, content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -10,7 +10,7 @@ export const AboutPageTemplate = ({ title, image, heading, description, content,
   return (
     <div>
       <header className="masthead text-center text-white d-flex"
-        style={{ backgroundImage: `url(${image})` }}>
+        style={{ background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url(${image})` }}>
         <div className="container my-auto">
           <div className="row">
             <div className="col-lg-10 mx-auto">
@@ -21,9 +21,11 @@ export const AboutPageTemplate = ({ title, image, heading, description, content,
             </div>
             <div className="col-lg-8 mx-auto">
               <p className="text-faded mb-5" dangerouslySetInnerHTML={{__html: description}}></p>
-              {/* <Zoom> */}
-                <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#about" onClick={(e) => smoothScrollTo(e)}>Learn More</a>
-              {/* </Zoom> */}
+              <Zoom>
+                <div>
+                  <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#about" onClick={(e) => smoothScrollTo(e)}>Learn More</a>
+                </div>
+              </Zoom>
             </div>
           </div>
         </div>

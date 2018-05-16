@@ -8,10 +8,12 @@ const ServiceGrid = ({ gridItems }) => (
         <div key={key} className="col-lg-3 col-md-6 text-center">
             <div className="service-box mt-5 mx-auto">
               <Zoom>
-                <i className={`fa fa-4x fa-${service.icon} text-primary mb-3 sr-icons`}></i>
+                <div>
+                  <i className={`fa fa-4x fa-${service.icon} text-primary mb-3 sr-icons`}></i>
+                  <h3 className="mb-3">{service.title}</h3>
+                  <p className="text-muted mb-0">{service.text}</p>
+                </div>
               </Zoom>
-              <h3 className="mb-3">{service.title}</h3>
-              <p className="text-muted mb-0">{service.text}</p>
             </div>
         </div>
     ))}

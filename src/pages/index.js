@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Expertise from '../components/Expertise'
 import smoothScrollTo from '../components/smoothScrollTo';
-// import Zoom from 'react-reveal/Zoom';
+import Zoom from 'react-reveal/Zoom';
 
 class IndexPage extends React.Component {
   render() {
@@ -11,7 +11,8 @@ class IndexPage extends React.Component {
     const home = data.allMarkdownRemark.edges[0].node.frontmatter;
     return (
       <div>
-        <header className="masthead text-center text-white d-flex">
+        <header className="masthead text-center text-white d-flex"
+          style={{ background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url(${home.image})` }}>
           <div className="container my-auto">
             <div className="row">
               <div className="col-lg-10 mx-auto">
@@ -22,15 +23,17 @@ class IndexPage extends React.Component {
               </div>
               <div className="col-lg-8 mx-auto">
                 <p className="text-faded mb-5">{home.description}</p>
-                {/* <Zoom> */}
-                  <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#expertise" onClick={(e) => smoothScrollTo(e)}>Find Out More</a>
-                {/* </Zoom> */}
+                <Zoom>
+                  <div>
+                    <a className="btn btn-primary btn-xl js-scroll-trigger sr-button" href="#expertise" onClick={(e) => smoothScrollTo(e)}>Find Out More</a>
+                  </div>
+                </Zoom>
               </div>
             </div>
           </div>
         </header>
         <section className="section" id="expertise">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col-lg-12 text-center">
                 <h1 className="section-heading">{home.expertise.heading}</h1>
@@ -75,6 +78,7 @@ export const pageQuery = graphql`
             templateKey
             date(formatString: "MMMM DD, YYYY")
             heading
+            image
             description
             expertise {
               heading
