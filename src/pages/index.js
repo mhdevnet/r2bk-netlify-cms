@@ -33,7 +33,7 @@ class IndexPage extends React.Component {
           </div>
         </header>
         <section className="section" id="expertise">
-          <div className="container-fluid">
+          <div className="container-fluid p-0">
             <div className="row">
               <div className="col-lg-12 text-center">
                 <h1 className="section-heading">{home.expertise.heading}</h1>

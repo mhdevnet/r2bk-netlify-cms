@@ -8,7 +8,12 @@
     font-weight: 700;
     text-transform: uppercase;
     color: $primary;
+    display: flex;
+    align-items: center;
     @include sans-serif-font;
+    figure {
+      margin: 0;
+    }
     &:focus,
     &:hover {
       color: darken($primary, .1);
@@ -17,9 +22,12 @@
       max-width: 88px;
     }
   }
+  .navbar-collapse {
+    height: auto !important;
+  }
   &.scrolled {
-    max-height: 75px;
     background-color: #fff;
+    box-shadow: 0 0 8px 4px rgba(0,0,0,0.15);
     li.nav-item > a.nav-link,
     li.nav-item > a.nav-link:focus {
       color: #000 !important;
@@ -35,7 +43,7 @@
   }
   .navbar-nav {
     > li.nav-item {
-       > a.nav-link,
+      > a.nav-link,
       > a.nav-link:focus {
         font-size: .9rem;
         font-weight: 700;
@@ -49,6 +57,46 @@
           background-color: transparent;
           &:hover {
             background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  @media(max-width: 768px) {
+    padding: 0 1rem;
+    max-height: 75px;
+    .navbar-brand {
+      padding-top: 0;
+      padding-bottom: 0;
+      .image {
+        margin: 0;
+        img {
+          max-height: 58px;
+        }
+      }
+    }
+    .collapsing.navbar-collapse {
+      display: none;
+    }
+    .show.navbar-collapse {
+      position: fixed;
+      display: block;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $white;
+      .navbar-nav {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        li {
+          flex: 1 1 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          a,
+          a:focus {
+            font-size: 2rem;
           }
         }
       }

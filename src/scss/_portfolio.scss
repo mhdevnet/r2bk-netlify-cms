@@ -91,10 +91,37 @@
       .portfolio-box-caption {
         .portfolio-box-caption-content {
           .project-category {
-            font-size: 16px;
+            font-size: 1.5rem;
           }
           .project-name {
             font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    @media(max-width: 768px) {
+      height: auto;
+      background-size: 100% 250px !important;
+      background-color: #ddd;
+      .portfolio-box-title {
+        height: 250px;
+      }
+      .portfolio-box-caption {
+        display: block;
+        position: relative;
+        transform: translateY(0%);
+        opacity: 1;
+        .portfolio-box-caption-content {
+          position: relative;
+          transform: none;
+          .project-name {
+            display: none;
+          }
+          .project-description {
+            bottom: 0;
+            font-size: 1rem;
+            padding: 0 1rem;
           }
         }
       }

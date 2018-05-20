@@ -5,10 +5,10 @@ import Fade from 'react-reveal/Fade';
 const ExpertiseGrid = ({ gridItems }) => (
     <section className="row no-gutters popup-gallery p-0" id="expertise-items">
         {gridItems.map((item, key) => (
-            <Fade left={key % 2 == 0} right={key % 2 != 0}>
-            <div className={`portfolio-box-container col-sm-12 col-md-6 ${key==0 ? 'active' : ''}`} key={key}>
-                <a className="portfolio-box" href="#" style={{
-                    backgroundImage: `url(${item.image})`,
+            <Fade left={key % 2 == 0} right={key % 2 != 0} key={key}>
+            <div className={`portfolio-box-container col-sm-12 col-md-6 ${key==0 ? 'active' : ''}`}>
+                <div className="portfolio-box" style={{
+                    background: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), url(${item.image})`,
                     backgroundSize: "cover"
                 }}>
                     <div className="portfolio-box-title">{item.title}</div>
@@ -18,7 +18,7 @@ const ExpertiseGrid = ({ gridItems }) => (
                             <div className="project-description" dangerouslySetInnerHTML={{__html: item.description}}></div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             </Fade>
         ))}
