@@ -24,6 +24,18 @@ header.masthead {
     min-height: 650px;
     padding-top: 0;
     padding-bottom: 0;
+    &.half {
+      height: 50vh;
+      min-height: 325px;
+    }
+    &.third {
+      height: 33vh;
+      min-height: 216.667px;
+    }
+    &.quarter {
+      height: 25vh;
+      min-height: 162.5px;
+    }
     h1 {
       font-size: 3rem;
     }

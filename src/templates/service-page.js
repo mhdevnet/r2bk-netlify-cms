@@ -90,7 +90,7 @@ ServicePage.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
     }),
-  }),
+  })
 }
 
 export default ServicePage
