@@ -7,6 +7,7 @@ heading: Contact Us
 description: Contact us by phone or email
 contact:
   heading: Contact Us
+  name: Jamie
   email: info@r2bk.com
   phone: (212) 555-5000
   description: Contact/footer description

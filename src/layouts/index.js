@@ -104,6 +104,7 @@ export const GlobalQuery = graphql`
           frontmatter {
             contact {
               heading
+              name
               phone
               email
               description

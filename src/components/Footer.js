@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import logo from '../img/logo.png'
 import Zoom from 'react-reveal/Zoom';
+import Helmet from 'react-helmet';
 
 class Footer extends React.Component {
   render() {
     const { data } = this.props
     const global = data.contact;
     const year = (new Date).getFullYear();
-    console.log(data);
 
     return (
       <footer id="contact">
@@ -17,7 +17,7 @@ class Footer extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">
-              <h2 className="section-heading">{global.heading}</h2>
+              <h2 className="section-heading text-uppercase">{global.heading}</h2>
               <hr className="my-4"/>
               <p className="mb-5" dangerouslySetInnerHTML={{__html: global.description}}></p>
             </div>

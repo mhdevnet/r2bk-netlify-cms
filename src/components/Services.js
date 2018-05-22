@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import Zoom from 'react-reveal/Zoom';
 
 const ServiceGrid = ({ gridItems }) => (
-  <div className="row is-multiline">
+  <div className="row is-multiline justify-content-center">
     {gridItems.map((service, key) => (
-        <div key={key} className="col-lg-3 col-md-6 text-center">
+        <div key={key} className="col-lg-6 col-md-6 text-center">
             <div className="service-box mt-5 mx-auto">
               <Zoom>
                 <div>

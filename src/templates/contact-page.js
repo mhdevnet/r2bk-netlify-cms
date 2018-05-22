@@ -4,6 +4,7 @@ import Zoom from 'react-reveal/Zoom';
 import SocialNetworks from '../components/SocialNetworks'
 import Content, { HTMLContent } from '../components/Content'
 import smoothScrollTo from '../components/smoothScrollTo';
+import HubspotForm from 'react-hubspot-form';
 
 export const ContactPageTemplate = ({
   title,
@@ -17,6 +18,13 @@ export const ContactPageTemplate = ({
 }) => {
   const PageContent = contentComponent || Content
 
+  let contactForm = `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+    <script>
+      hbspt.forms.create({
+        portalId: "4588123",
+        formId: "36b9637e-21c8-4130-80e7-1745848cfc14"
+      });
+    </script>`
   return (
     <div>
       <header className="masthead half text-center text-white d-flex"
@@ -30,9 +38,6 @@ export const ContactPageTemplate = ({
               <hr />
             </div>
             <div className="col-lg-8 mx-auto">
-              <SocialNetworks gridItems={social}/>
-            </div>
-            <div className="col-lg-8 mx-auto">
               <Zoom>
                 <div>
                   <p className="text-faded mb-5" dangerouslySetInnerHTML={{__html: description}}></p>
@@ -44,14 +49,45 @@ export const ContactPageTemplate = ({
       </header>
       <section className="section section--gradient" id="contact-description">
         <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
+          <div className="row">
+            <div className="col-lg-6">
               <div className="section">
-                <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                  {title}
-                </h2>
-                <PageContent className="content" content={content} />
+                <HubspotForm
+                  portalId='4588123'
+                  formId='36b9637e-21c8-4130-80e7-1745848cfc14'
+                  onSubmit={() => console.log('Submit!')}
+                  loading={<div>Loading...</div>}
+                />
               </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="section contact-detail">
+                <SocialNetworks gridItems={social}/>
+              </div>
+              {contact.name.length && 
+                <div className="section contact-detail">
+                  <h2 className="text-uppercase">Person</h2>
+                  <p>
+                    {contact.name}
+                  </p>
+                </div> 
+              }
+              {contact.phone.length && 
+                <div className="section contact-detail">
+                  <h2 className="text-uppercase">Phone</h2>
+                  <p>
+                    <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+                  </p>
+                </div> 
+              }
+              {contact.address.length && 
+                <div className="section contact-detail">
+                  <h2 className="text-uppercase">Address</h2>
+                  <p>
+                    {contact.address}
+                  </p>
+                </div> 
+              }
             </div>
           </div>
         </div>
@@ -109,6 +145,7 @@ export const aboutPageQuery = graphql`
         image
         description
         contact {
+          name
           address
           phone
           email

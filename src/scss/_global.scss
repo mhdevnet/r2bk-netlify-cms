@@ -81,3 +81,37 @@ img::-moz-selection {
 * {
   transition: all 250ms ease-in-out;
 }
+
+.contact-detail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @media(max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.input .hs-input {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.hs_recaptcha {
+	display: flex;
+  justify-content: center;
+}
+
+.actions {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  .hs-button {
+    @extend .btn;
+    @extend .btn-xl;
+    width: 100%;
+  }
+}
+
+#contact-description {
+  padding: 2rem 0;
+}
