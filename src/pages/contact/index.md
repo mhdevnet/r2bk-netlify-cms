@@ -1,28 +1,16 @@
 ---
-templateKey: 'contact-page'
-path: /contact
+templateKey: contact-page
 title: Contact
 image: /img/jumbotron.jpg
 heading: Contact Us
 description: Contact us by phone or email
-contact:
-  heading: Contact Us
-  name: Jamie
-  email: info@r2bk.com
-  phone: (212) 555-5000
-  description: Contact/footer description
-  address: Somewhere
-social:
-  - name: facebook
-    icon: facebook
-    url: url
-  - name: linkedin
-    icon: linkedin
-    url: url
-  - name: twitter
-    icon: twitter
-    url: url
-  - name: youtube
-    icon: youtube
-    url: url
+name: German Jamie Jimenez
+address: ''''''
+phone: '(212) 655-5445 '
+networks:
+  items:
+    - icon: facebook
+      name: Facebook
+      url: 'https://www.facebook.com/r2bk.co/'
 ---
+
