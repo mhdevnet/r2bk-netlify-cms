@@ -10,7 +10,7 @@ description: >-
 expertise:
   items:
     - title: Digital Strategy
-      image: /img/portfolio/1.jpg
+      image: /img/1.jpg
       description: >
         Digital is revolutionizing consumer behavior, redefining the value chain
         across industries, and enabling organizations to become more customer
@@ -21,7 +21,7 @@ expertise:
         revenues and market share. These strategies permit us to create
         data-driven personas and a personalized customer experience.
     - title: Digital Due Diligence & Portfolio Assessment
-      image: /img/portfolio/2.jpg
+      image: /img/3.jpg
       description: >
         Historically, the objective of due diligence has been to evaluate the
         risks related to a company acquisition or divesture, most commonly
