@@ -104,15 +104,18 @@ export const GlobalQuery = graphql`
           frontmatter {
             contact {
               heading
+              description
               name
+              address
               phone
               email
-              description
             }
-            social {
-              name
-              url
-              icon
+            networks {
+              items {
+                name
+                url
+                icon
+              }
             }
           }
         }

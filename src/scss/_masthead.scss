@@ -2,8 +2,9 @@
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-position: center center;
-  @include background-cover;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
   hr {
     margin-top: 30px;
     margin-bottom: 30px;

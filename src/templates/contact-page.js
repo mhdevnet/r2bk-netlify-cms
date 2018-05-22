@@ -13,7 +13,7 @@ export const ContactPageTemplate = ({
   image,
   description,
   contact,
-  social,
+  networks,
   contentComponent
 }) => {
   const PageContent = contentComponent || Content
@@ -62,13 +62,21 @@ export const ContactPageTemplate = ({
             </div>
             <div className="col-lg-6">
               <div className="section contact-detail">
-                <SocialNetworks gridItems={social}/>
+                {networks && networks.items && networks.items.length && <SocialNetworks gridItems={networks.items}/>}
               </div>
               {contact.name.length && 
                 <div className="section contact-detail">
-                  <h2 className="text-uppercase">Person</h2>
+                  <h2 className="text-uppercase">Name</h2>
                   <p>
                     {contact.name}
+                  </p>
+                </div> 
+              }
+              {contact.email.length && 
+                <div className="section contact-detail">
+                  <h2 className="text-uppercase">eMail</h2>
+                  <p>
+                    <a href={`mailto:${contact.email}`}>{contact.email}</a>
                   </p>
                 </div> 
               }
@@ -80,7 +88,7 @@ export const ContactPageTemplate = ({
                   </p>
                 </div> 
               }
-              {contact.address.length && 
+              {(contact.address.length && contact.address != 'none') && 
                 <div className="section contact-detail">
                   <h2 className="text-uppercase">Address</h2>
                   <p>
@@ -103,7 +111,7 @@ ContactPageTemplate.propTypes = {
   image: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
-  social: PropTypes.array,
+  networks: PropTypes.array,
   contact: PropTypes.shape({
     phone: PropTypes.string,
     address: PropTypes.string
@@ -121,7 +129,7 @@ const ContactPage = ({ data }) => {
       image={frontmatter.image}
       description={frontmatter.description}
       contact={frontmatter.contact}
-      social={frontmatter.social}
+      networks={frontmatter.networks}
     />
   )
 }
@@ -149,11 +157,15 @@ export const aboutPageQuery = graphql`
           address
           phone
           email
+          heading
+          description
         }
-        social {
-          url
-          icon
-          name
+        networks {
+          items {
+            url
+            icon
+            name
+          }
         }
       }
     }

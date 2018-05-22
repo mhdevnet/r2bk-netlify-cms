@@ -9,6 +9,8 @@ description: >-
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
 services:
+  heading: Services
+  description: Service List
   items:
     - icon: heart
       text: >

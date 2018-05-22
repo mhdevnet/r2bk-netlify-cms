@@ -1,6 +1,7 @@
 ---
 templateKey: home-page
 title: RR2BK | Home
+heading: R2BK is a premier technology solutions organization and content creator.
 image: /img/chemex.jpg
 description: >-
   R2BK partners with clients to deliver consulting solutions surrounding
@@ -8,6 +9,7 @@ description: >-
   Consultants shares in the risk and responsibility for delivery of high-quality
   solutions.
 expertise:
+  heading: Our Expertise
   items:
     - title: Digital Strategy
       image: /img/1.jpg

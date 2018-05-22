@@ -39,7 +39,7 @@ export const ServicePageTemplate = ({
       <div className="container">
         <div className="row">
           <div className="col-lg-8 mx-auto text-center">
-            <h2 className="section-heading text-white">{services.title}</h2>
+            <h2 className="section-heading text-white">{services.heading}</h2>
             <hr className="light my-4" />
             <p className="text-faded mb-4" dangerouslySetInnerHTML={{__html: services.description}}></p>
             <Zoom>
@@ -65,7 +65,7 @@ ServicePageTemplate.propTypes = {
   heading: PropTypes.string,
   description: PropTypes.string,
   services: PropTypes.shape({
-    title: PropTypes.string,
+    heading: PropTypes.string,
     description: PropTypes.string,
     items: PropTypes.array
   })
@@ -104,7 +104,7 @@ export const ServicePageQuery = graphql`
         heading
         description
         services {
-          title
+          heading
           description
           items {
             title
