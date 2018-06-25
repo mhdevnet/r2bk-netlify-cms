@@ -10,6 +10,7 @@ description: >
   introduced into their businesses, but the majority have not yet defined and
   implemented a robust digital strategy.
 
+
   R2BK will work alongside our clients to build customer centric digital
   strategies that increase revenues and market share. These strategies permit us
   to create data-driven personas and a personalized customer experience.
