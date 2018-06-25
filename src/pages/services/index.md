@@ -68,13 +68,5 @@ services:
         strategies.
 
       title: Digital Project Management
-    - icon: refresh
-      text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
-      title: Title 4
 ---
 
