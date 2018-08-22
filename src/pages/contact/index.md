@@ -13,5 +13,11 @@ networks:
     - icon: facebook
       name: Facebook
       url: 'https://www.facebook.com/r2bk.co/'
+    - icon: linkedin
+      name: LinkedIn
+      url: 'https://www.linkedin.com/company/r2bk/'
+    - icon: twitter
+      name: Twitter
+      url: 'https://twitter.com/_r2bk/'
 ---
 
