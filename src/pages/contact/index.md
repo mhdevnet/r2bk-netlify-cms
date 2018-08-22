@@ -5,12 +5,9 @@ image: /img/jumbotron.jpg
 heading: Contact Us
 description: Contact us by phone or email
 contact:
-  heading: Contact Us
-  description: Contact Us
-  name: German Jamie Jimenez
   address: none
-  phone: '(212) 655-5445'
-  email: info@r2bk.com
+  name: Customer Service
+  phone: (212) 655-5445
 networks:
   items:
     - icon: facebook
