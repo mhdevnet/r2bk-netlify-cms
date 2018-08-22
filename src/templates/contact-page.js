@@ -18,13 +18,6 @@ export const ContactPageTemplate = ({
 }) => {
   const PageContent = contentComponent || Content
 
-  let contactForm = `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-    <script>
-      hbspt.forms.create({
-        portalId: "4588123",
-        formId: "36b9637e-21c8-4130-80e7-1745848cfc14"
-      });
-    </script>`
   return (
     <div>
       <header className="masthead half text-center text-white d-flex"
@@ -111,7 +104,7 @@ ContactPageTemplate.propTypes = {
   image: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
-  networks: PropTypes.array,
+  networks: PropTypes.object,
   contact: PropTypes.shape({
     phone: PropTypes.string,
     address: PropTypes.string
@@ -119,7 +112,7 @@ ContactPageTemplate.propTypes = {
 }
 
 const ContactPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <ContactPageTemplate
@@ -157,8 +150,6 @@ export const aboutPageQuery = graphql`
           address
           phone
           email
-          heading
-          description
         }
         networks {
           items {

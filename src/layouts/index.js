@@ -72,7 +72,6 @@ class TemplateWrapper extends React.Component {
 
   render () {
     let { data, children } = this.props;
-    console.log(this.props);
     const global = data.allMarkdownRemark.edges[0].node.frontmatter;
     return (
       <div>
@@ -102,9 +101,9 @@ export const GlobalQuery = graphql`
       edges {
         node {
           frontmatter {
+            title
+            heading
             contact {
-              heading
-              description
               name
               address
               phone

@@ -59,10 +59,10 @@ export const homePageQuery = graphql`
         heading
         description
         contact {
-          email
-          heading
+          name
+          address
           phone
-          description
+          email
         }
         expertise {
           heading

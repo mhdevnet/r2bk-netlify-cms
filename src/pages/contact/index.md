@@ -8,6 +8,7 @@ contact:
   address: none
   name: Customer Service
   phone: (212) 655-5445
+  email: info@r2bk.com
 networks:
   items:
     - icon: facebook
