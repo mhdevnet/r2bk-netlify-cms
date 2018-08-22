@@ -18,6 +18,6 @@ networks:
       url: 'https://www.linkedin.com/company/r2bk/'
     - icon: twitter
       name: Twitter
-      url: 'https://twitter.com/_r2bk/'
+      url: 'https://twitter.com/_r2bk'
 ---
 
